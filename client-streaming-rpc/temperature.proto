@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "pb/";
+
+service TemperatureService {
+    rpc RecordTemperature (stream TemperatureRequest) returns (TemperatureResponse);
+}
+
+message TemperatureRequest {
+    float temperature = 1;
+}
+
+message TemperatureResponse {
+    float average_temperature = 1;
+}

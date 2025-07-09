@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "pb/";
+
+service StockService {
+    rpc StreamStockPrices(stream StockRequest) returns (stream StockResponse);
+}
+
+message StockRequest {
+    string symbol = 1;
+}
+
+message StockResponse {
+    string symbol = 1;
+    float price   = 2;
+}
