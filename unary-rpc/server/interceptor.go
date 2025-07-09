@@ -9,7 +9,7 @@ import (
 	"google.golang.org/grpc/metadata"
 )
 
-var jwtKey = []byte("mySecretKey")
+var jwtKey = []byte("MY SECRET KEY HERE")
 
 func validateJWT(tokenStr string) (string, error) {
 	token, err := jwt.Parse(tokenStr, func(token *jwt.Token) (interface{}, error) {
